@@ -57,45 +57,85 @@ const items = [1, 2, 3, 4, 5, 6];
 // console.log(newItems);
 
 // // 7 - change array to ["bye"]
-// const solution7 = intialArray; //
-// console.log({ solution7 });
+// const newItems = items.map((item) => {
+//   if (item === 1) {
+//     return "bye";
+//   }
+// });
 
-// const arrayOfObjects = [
-//   { id: 1, text: "hello world", isCompleted: true },
-//   { id: 2, text: "dont give up", isCompleted: false },
-//   { id: 3, text: "keep going", isCompleted: true },
-//   { id: 4, text: "you can do it", isCompleted: false },
-//   { id: 5, text: "apply what you learn", isCompleted: true },
-// ];
+// const onlyBye = newItems.filter((newItem) => {
+//   if (newItem === "bye") {
+//     return newItem;
+//   }
+// });
+// console.log(onlyBye);
+
+const todos = [
+  { id: 1, text: "hello world", isCompleted: true },
+  { id: 2, text: "dont give up", isCompleted: false },
+  { id: 3, text: "keep going", isCompleted: true },
+  { id: 4, text: "you can do it", isCompleted: false },
+  { id: 5, text: "apply what you learn", isCompleted: true },
+];
 
 // // 8 - change all status to completed
-// const solution8 = arrayOfObjects;
-// console.log({ solution8 });
+// const newTodos = todos.map((todo) => {
+//   return { ...todo, isCompleted: true };
+// });
+// console.log({ newTodos });
 
 // // 9 - change id 4 to completed
-// const solution9 = arrayOfObjects;
-// console.log({ solution9 });
+// const newTodos = todos.map((todo) => {
+//   if (todo.id === 4) {
+//     return { ...todo, isCompleted: true };
+//   }
+//   return todo;
+// });
+// console.log({ newTodos });
 
 // // 10 - remove (filter out) all todo that is already completed
-// const solution10 = arrayOfObjects;
-// console.log({ solution10 });
+// const newTodos = todos.filter((todo) => {
+//   if (todo.isCompleted === true) {
+//     return { ...todo, isCompleted: true };
+//   }
+// });
+// console.log({ newTodos });
 
 // // 11 - change text of not completed item to "you need to pay to use this todos"
-// const solution11 = arrayOfObjects;
-// console.log({ solution11 });
+// const newTodos = todos.map((todo) => {
+//   if (todo.isCompleted === false) {
+//     return { ...todo, text: "you need to pay to use this todos" };
+//   }
+//   return todo;
+// });
+// console.log({ newTodos });
 
-// // 12 - add new property call "isPaid" to each of the todos with default value `false`, eg: { id: 1, text: "hello world", isCompleted: true, paid: false},
-// const solution12 = arrayOfObjects;
-// console.log({ solution12 });
+// // 12 - add new property call "isPaid" to each of the todos with default value `false`, eg: { id: 1, text: "hello world", isCompleted: true, isPaid: false},
+// const newTodos = todos.map((todo) => {
+//   return { ...todo, isPaid: false };
+// });
+// console.log({ newTodos });
 
 // // 13 - add new property call "cost" (integer) with the default value, character count of the "text" field, eg: { id: 1, text: "hello world", isCompleted: true, cost: 10}, because "hello world" has 10 characters
-// const solution13 = arrayOfObjects;
-// console.log({ solution13 });
+// const newTodos = todos.map((todo) => {
+//   return { ...todo, cost: todo.text.length };
+// });
+// console.log({ newTodos });
 
 // // 14 - change all id from number format to string format, eg: id: 3 => id: "3"
-// const solution14 = arrayOfObjects;
-// console.log({ solution14 });
+// const newTodos = todos.map((todo) => {
+//   return { ...todo, id: todo.id.toString() };
+// });
+// console.log({ newTodos });
 
 // // 15 - remove completed todo and reset the id to 1,2,3 ascending
-// const solution15 = arrayOfObjects;
-// console.log({ solution15 });
+const newTodos = todos.filter((todo) => {
+  if (todo.isCompleted === false) {
+    return { ...todo, isCompleted: false };
+  }
+});
+
+const reset = newTodos.map((newTodo, newId) => {
+  return { ...newTodo, id: newId + 1 };
+});
+console.log({ reset });
